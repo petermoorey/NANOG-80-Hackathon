@@ -5,7 +5,7 @@ regions:
         - 10.200.49.9       # Bern
         - 10.200.49.10      # Rome
     americas:
-        - 10.200.49.5       # Bostn
+        - 10.200.49.5       # Boston
         - 10.200.59.6       # Quito
     external:
         - 10.200.49.4       # Americas DC
@@ -26,4 +26,4 @@ policy:
         match: any
         region: external
         attributes:
-            as_orogin: 150
+            as_origin: 150
