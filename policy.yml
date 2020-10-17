@@ -18,7 +18,7 @@ policy:
         attributes:                     # List of attributes to evaluate and expected values
             community: 100:123456       # Community value expected in RIB update
     192.168.0.0/16:
-        match: any
+        match: any                      # any match will include any network prefix that is within the subnet, or the subnet itself
         region: external
         attributes:
             as_origin: 100
