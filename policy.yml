@@ -28,8 +28,8 @@ policy:
         region: external
         attributes:
             origin: 100
-            community: 100
-            as_path: 11
+            # community: 100
+            as_path: 13979 13979
     150.0.0.0/16:
         match: any
         region: external
