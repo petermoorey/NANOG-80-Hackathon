@@ -1,0 +1,17 @@
+---
+subscriptions:
+  100:
+    xpath: "/bgp-ios-xe-oper:bgp-state-data/bgp-route-vrfs"
+    period: 1000
+    sourcevrf: "mgmt"
+    rx:
+      ip: "10.0.0.1"
+      tcp_port: 35005
+  101:
+    xpath: "/process-cpu-ios-xe-oper:cpu-usage/cpu-utilization/five-seconds"
+    period: 1000
+    sourcevrf: "mgmt"
+    rx:
+      ip: "10.0.0.1"
+      tcp_port: 35005
+...
