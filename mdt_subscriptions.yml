@@ -1,7 +1,7 @@
 ---
 subscriptions:
   100:
-    xpath: "/bgp-ios-xe-oper:bgp-state-data"
+    xpath: "/bgp-ios-xe-oper:bgp-state-data/bgp-route-vrfs"
     period: 1000
     sourcevrf: "mgmt"
     rx:
