@@ -1,0 +1,27 @@
+---
+routers:
+  americas-dc:
+    ip: 10.200.49.4
+    mdt_bgp: True
+    mdt_enable: True
+  europe-dc:
+    ip: 10.200.49.8
+    mdt_bgp: True
+    mdt_enable: True
+  boston:
+    ip: 10.200.49.5
+    mdt_bgp: True
+    mdt_enable: True
+  bern:
+    ip: 10.200.49.9
+    mdt_bgp: True
+    mdt_enable: True
+  rome:
+    ip: 10.200.49.10
+    mdt_bgp: True
+    mdt_enable: True
+  quito:
+    ip: 10.200.49.6
+    mdt_bgp: True
+    mdt_enable: True
+...

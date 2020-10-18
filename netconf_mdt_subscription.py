@@ -3,15 +3,26 @@ from yaml import safe_load
 from jinja2 import Environment, FileSystemLoader
 from ncclient import manager
 
-HOSTS = {'10.200.49.11'}
+
+INVENTORY_FILE = "inventory.yml"
 USER = 'cisco'
 PWD = 'cisco'
 PORT = 443
 
-def main(grpc_host, hosts):
+def main(grpc_host):
+    
+    hosts = []
+    
     with open("mdt_subscriptions.yml", "r") as f:
         mdt_sub = safe_load(f)
-    
+
+    with open(INVENTORY_FILE, "r") as f:
+        inventory = safe_load(f)
+
+    for router in inventory['routers']:
+        if inventory['routers'][router]['mdt_bgp']:
+            hosts.append(inventory['routers'][router]['ip'])
+
     for subscription in mdt_sub['subscriptions']:
         mdt_sub['subscriptions'][subscription]['rx']['ip'] = grpc_host
     j2_env = Environment(loader=FileSystemLoader("."), trim_blocks=True, autoescape=True)
@@ -42,7 +53,7 @@ def main(grpc_host, hosts):
     
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print(f"usage: python netconf_mdt.py <host1> ... <hostN>")
+        print(f"usage: python netconf_mdt_subscription.py <gRPC host ip address>")
         sys.exit(1)
 
-    main(sys.argv[1], HOSTS)
+    main(sys.argv[1])
