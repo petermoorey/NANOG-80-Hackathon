@@ -1,0 +1,7 @@
+database:
+  host: influxdb
+  username: root
+  password: root
+  database: bgp_compliance
+  
+    
