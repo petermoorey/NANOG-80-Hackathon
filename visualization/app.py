@@ -6,7 +6,7 @@ import dash_html_components as html
 import plotly.express as px
 import pandas as pd
 
-client = InfluxDBClient(host='163.185.202.37', port=8086, username='root', password='root', database='telegraf')
+client = InfluxDBClient(host='influxdb', port=8086, username='root', password='root', database='telegraf')
 q = 'SELECT * from routingCompliance'
 df = pd.DataFrame(client.query(q, chunked=True, chunk_size=10000).get_points())
 
