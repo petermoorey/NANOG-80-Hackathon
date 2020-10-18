@@ -12,7 +12,7 @@ services:
     depends_on:
       - influxdb
   
-  # display policy compliance
+  # display policy compliance using Plotly
   visualization:
     build: "visualization/"
     ports:
@@ -20,6 +20,16 @@ services:
     entrypoint: "sleep infinity"
     depends_on:
       - influxdb
+  
+  # display policy compliance using Chronograf
+  chronograf:
+    image: chronograf
+    ports:
+      - "8888:8888"
+    depends_on:
+      - influxdb
+    volumes:
+      - ./chronograf:/core/
 
   # store policy compliance
   influxdb:
