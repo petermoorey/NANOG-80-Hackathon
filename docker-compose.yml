@@ -24,3 +24,15 @@ services:
       - influxdb_db=routing_compliance
       - influxdb_user=root
       - influxdb_user_password=root
+
+  # Telemetry input
+  telegraf:
+    build: "telegraf"
+    ports:
+      - "35005:35005"
+    environment:
+      HOST_NAME: "telegraf"
+      INFLUXDB_HOST: "influxdb"
+      INFLUXDB_PORT: "8086"
+      DATABASE: "telegraf"
+      GRPC_PORT: "35005"
