@@ -2,3 +2,5 @@ pylint
 pycodestyle
 influxdb
 plotly
+dash
+pandas
