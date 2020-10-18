@@ -47,7 +47,7 @@ app.layout = html.Div(children=[
 
     html.Div([
             html.Div([
-                    html.H4('Community Value Compliance'),
+                    html.H4('Community Value - Count of Non-Compliant Events'),
                     dcc.Graph(
                         id='fig_community_compliance',
                         figure=fig_community_compliance
@@ -55,7 +55,7 @@ app.layout = html.Div(children=[
                 ]
             ),
             html.Div([
-                    html.H4('AS Origin Compliance'),
+                    html.H4('AS Origin Compliance - Count of Non-Compliant Events'),
                     dcc.Graph(
                         id='fig_as_origin_compliance',
                         figure=fig_as_origin_compliance
@@ -63,7 +63,7 @@ app.layout = html.Div(children=[
                 ]
             ),
             html.Div([
-                    html.H4('Weight Compliance'),
+                    html.H4('Weight Compliance - Count of Non-Compliant Events'),
                     dcc.Graph(
                         id='fig_weight_compliance',
                         figure=fig_weight_compliance
@@ -71,37 +71,16 @@ app.layout = html.Div(children=[
                 ]
             ),
             html.Div([
-                    html.H4('MED Compliance'),
+                    html.H4('MED Compliance - Count of Non-Compliant Events'),
                     dcc.Graph(
                         id='fig_med_compliance',
                         figure=fig_med_compliance
                     )
                 ]
             )
-        ], style={'columnCount': 4})
+        ], style={'columnCount': 2})
     ]
 )
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-# json_data = [
-#     {
-#         "measurement": "routingCompliance",
-#         "tags": {
-#             "prefix": "192.168.0.0/24",
-#             "source": "10.200.49.8",
-#             "as_path": ""
-#         },
-#         "time": datetime.now(),
-#         "fields": {
-#                 "as_origin_compliance": 1,
-#                 "community_compliance": 0,
-#                 "weight_compliance": 0,
-#                 "med_compliance": 0,
-#         }
-#     }
-# ]
-
-# client.create_database('routing_compliance')
-# client.write_points(json_data)
