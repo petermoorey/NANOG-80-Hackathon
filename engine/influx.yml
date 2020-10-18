@@ -1,7 +1,5 @@
 database:
-  host: influxdb
+  host: 163.185.202.37
   username: root
   password: root
-  database: bgp_compliance
-  
-    
+  database: telegraf
