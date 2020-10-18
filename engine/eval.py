@@ -1,6 +1,7 @@
 import sys
 import yaml
 import re
+import time 
 
 from netaddr import IPNetwork, IPAddress
 from influxdb import InfluxDBClient
@@ -37,10 +38,12 @@ class ComplianceParser(object):
                 parent_network = IPNetwork(prefix)
                 
                 if policy['match'] == 'any':
-                    if prefix in parent_network:
+                    if target_network in parent_network:
+                        print(f"{target_network} in {parent_network}")
                         return str(parent_network)
                 elif policy['match'] == 'explicit':
-                        if prefix == parent_network:
+                        if target_network == parent_network:
+                            print(f"{target_network} is {parent_network}")
                             return prefix
                 else:
                     raise NotImplementedError
@@ -50,16 +53,19 @@ class ComplianceParser(object):
         return None
 
     def evaluate(self) -> bool:
-        query = f'SELECT * FROM "{self.source}" WHERE time > now() - 10s GROUP BY "source"'
+        query = f'SELECT * FROM "{self.source}" WHERE time > now() - 15s'
         print(query)
         results = self.db.query(query)
         for result in results.get_points(self.source):
             prefix_path = 'bgp_route_af/bgp_route_filter/bgp_route_entry/prefix'
             prefix = result[prefix_path]
+            print(f"Prefix is {prefix} on source {result['source']}")
 
             if prefix:
                 compliance = {}
                 policy_prefix = self.is_in_policy(prefix)
+                print(f"Policy prefix: {policy_prefix}")
+                print(f"evaluating prefix {prefix} in policy")
                 if policy_prefix:
                     policy = self.policies[policy_prefix]
 
@@ -68,11 +74,11 @@ class ComplianceParser(object):
                             if 'bgp_neighbor' not in attr:
                                 if re.search(f"/{key}$", attr):
                                     if result[attr] == value:
-                                        compliance[f"{key}_compliance"] = 1
-                                        print(f"prefix {prefix} attribute {key} is {result[attr]} which is compliant")
-                                    else:
                                         compliance[f"{key}_compliance"] = 0
-                                        print(f"prefix {prefix} attribute {key} is {result[attr]} which is non-compliant")
+                                        print(f"prefix {prefix} attribute {key} is {result[attr]} which is compliant based on {value} from source {result['source']}")
+                                    else:
+                                        compliance[f"{key}_compliance"] = 1
+                                        print(f"prefix {prefix} attribute {key} is {result[attr]} which is non-compliant based on {value} from source {result['source']}")
             
                 payload = [{
                     "measurement": "routingCompliance",
@@ -85,23 +91,9 @@ class ComplianceParser(object):
                 print("Comitting to DB")
                 print(payload)
                 self.db.write_points(payload)
-            
+            else:
+                print(result)
 
-# {
-#         "measurement": "routingCompliance",
-#         "tags": {
-#             "prefix": "192.168.0.0/24",
-#             "source": "10.200.49.8",
-#             "as_path": ""
-#         },
-#         "time": datetime.now(),
-#         "fields": {
-#                 "as_origin_compliance": 1,
-#                 "community_compliance": 0,
-#                 "weight_compliance": 0,
-#                 "med_compliance": 0,
-#         }
-#     }
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -112,4 +104,8 @@ if __name__ == "__main__":
     while True:
         # Get dataset
         parser.evaluate()
-        sleep(sys.argv[2])
+
+        try:
+            time.sleep(int(sys.argv[2]))
+        except TypeError:
+            print("Interval must be a number")
