@@ -3,10 +3,12 @@ services:
 
   # assess policy compliance
   compliance:
-    image: "python:3.8"
+    build: "engine/"
     ports:
-      - "8001:8001"
+      - "8060:8060"
     entrypoint: "sleep infinity"
+    volumes:
+      - ./:/core/
   
   # display policy compliance
   visualization:
