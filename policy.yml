@@ -15,9 +15,14 @@ regions:
 policy:
     0.0.0.0/0:                          # Match default route
         match: explicit                 # Match type is explicit. RIB prefix must match 0.0.0.0/0 exactly
-        region: emea                    # Region to monitor for RIB updates on
+        region: americas                # Region to monitor for RIB updates on
         attributes:                     # List of attributes to evaluate and expected values
             community: 100:1            # Community value expected in RIB update
+    0.0.0.0/0:                          # Match default route
+        match: explicit                 # Match type is explicit. RIB prefix must match 0.0.0.0/0 exactly
+        region: emea                    # Region to monitor for RIB updates on
+        attributes:                     # List of attributes to evaluate and expected values
+            community: 100:2            # Community value expected in RIB update
     192.168.0.0/16:
         match: any                      # any match will include any network prefix that is within the subnet, or the subnet itself
         region: external
