@@ -1,29 +1,37 @@
 # BGP RIB Compliance Policy file for demo lab
 
+root_source: Cisco-IOS-XE-bgp-oper:bgp-state-data/bgp-route-vrfs/bgp-route-vrf
+root_path: bgp_route_af/bgp_route_filter/bgp_route_entry/bgp_path_entry/
 regions:
     emea:
         - 10.200.49.9       # Bern
         - 10.200.49.10      # Rome
     americas:
         - 10.200.49.5       # Boston
-        - 10.200.59.6       # Quito
+        - 10.200.49.6       # Quito
     external:
         - 10.200.49.4       # Americas DC
         - 10.200.49.8       # Europe DC
-
 policy:
+    0.0.0.0/0:                          # Match default route
+        match: explicit                 # Match type is explicit. RIB prefix must match 0.0.0.0/0 exactly
+        region: americas                # Region to monitor for RIB updates on
+        attributes:                     # List of attributes to evaluate and expected values
+            community: 100:1            # Community value expected in RIB update
     0.0.0.0/0:                          # Match default route
         match: explicit                 # Match type is explicit. RIB prefix must match 0.0.0.0/0 exactly
         region: emea                    # Region to monitor for RIB updates on
         attributes:                     # List of attributes to evaluate and expected values
-            community: 100:123456       # Community value expected in RIB update
+            community: 100:2            # Community value expected in RIB update
     192.168.0.0/16:
         match: any                      # any match will include any network prefix that is within the subnet, or the subnet itself
         region: external
         attributes:
-            as_origin: 100
-    10.250.0.0/16:
+            origin: 100
+            # community: 100
+            as_path: 13979 13979
+    150.0.0.0/16:
         match: any
         region: external
         attributes:
-            as_origin: 150
+            origin: 150
