@@ -29,7 +29,7 @@ services:
     depends_on:
       - influxdb
     volumes:
-      - ./chronograf:/core/
+      - ./chronograf:/var/lib/chronograf
 
   # store policy compliance
   influxdb:
