@@ -9,23 +9,24 @@ Create a system to evaluate BGP events based on a defined policy
 - Design as an extensible framework, with examples included
 
 
-# Example Database Object:
+# Example Policy Compliance Object:
 
 ```
-{
-   "prefix":"10.1.1.0/24",
-   "timestamp":"2732973822",
-   "attrs":[
-      {
-         "name":"med",
-         "value":30,
-         "compliance":"true"
-      },
-      {
-         "name":"as_origin",
-         "value":72,
-         "compliance":"false"
-      }
-   ]
-}
+json_data = [
+    {
+        "measurement": "routingCompliance",
+        "tags": {
+            "prefix": "192.168.0.0/24",
+            "source": "10.200.49.8",
+            "as_path": ""
+        },
+        "time": datetime.now(),
+        "fields": {
+                "as_origin_compliance": 1,
+                "community_compliance": 0,
+                "weight_compliance": 0,
+                "med_compliance": 0,
+        }
+    }
+]
 ```

@@ -20,16 +20,15 @@ for v in df.prefix.unique():
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-fig_community_compliance = px.bar(df, x="time", y="community_compliance", color="prefix", barmode="group")
-fig_as_origin_compliance = px.bar(df, x="time", y="as_origin_compliance", color="prefix", barmode="group")
+fig_community_compliance = px.area(df, x="time", y="community_compliance", color="prefix")
+fig_as_origin_compliance = px.area(df, x="time", y="as_origin_compliance", color="prefix")
+fig_weight_compliance = px.area(df, x="time", y="weight_compliance", color="prefix")
+fig_med_compliance = px.area(df, x="time", y="med_compliance", color="prefix")
 
 app.layout = html.Div(children=[
     html.H1(children='BGP Routing Compliance Dashboard'),
 
-    html.H3(children='''
-        NANOG 80 Hackathon
-    '''),
-
+    html.H3(children='''NANOG 80 Hackathon'''),
 
     html.Div([
         html.Label('Select a router'),
@@ -62,8 +61,24 @@ app.layout = html.Div(children=[
                         figure=fig_as_origin_compliance
                     )
                 ]
+            ),
+            html.Div([
+                    html.H4('Weight Compliance'),
+                    dcc.Graph(
+                        id='fig_weight_compliance',
+                        figure=fig_weight_compliance
+                    )
+                ]
+            ),
+            html.Div([
+                    html.H4('MED Compliance'),
+                    dcc.Graph(
+                        id='fig_med_compliance',
+                        figure=fig_med_compliance
+                    )
+                ]
             )
-        ], style={'columnCount': 2})
+        ], style={'columnCount': 4})
     ]
 )
 
@@ -90,4 +105,3 @@ if __name__ == '__main__':
 
 # client.create_database('routing_compliance')
 # client.write_points(json_data)
-
