@@ -5,6 +5,7 @@ INVENTORY_FILE = "inventory.yml"
 USER = 'cisco'
 PWD = 'cisco'
 
+
 def set_config(ip, config):
 
     device = {
@@ -20,6 +21,7 @@ def set_config(ip, config):
     print(output)
     net_connect.disconnect()
 
+
 def main():
 
     with open(INVENTORY_FILE, "r") as f:
@@ -30,6 +32,7 @@ def main():
             ip = inventory['routers'][router]['ip']
             config = ["ip http secure-server", "restconf", "netconf ssh", "netconf-yang"]
             set_config(ip, config)
+
 
 if __name__ == "__main__":
     main()
