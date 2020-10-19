@@ -20,10 +20,10 @@ while True:
             },
             "time": datetime.now(),
             "fields": {
-                    "as_origin_compliance": random.randint(0, 4),
-                    "community_compliance": random.randint(0, 4),
-                    "weight_compliance": random.randint(0, 4),
-                    "med_compliance": random.randint(0, 4),
+                "as_origin_compliance": random.randint(0, 4),
+                "community_compliance": random.randint(0, 4),
+                "weight_compliance": random.randint(0, 4),
+                "med_compliance": random.randint(0, 4),
             }
         }
     ]

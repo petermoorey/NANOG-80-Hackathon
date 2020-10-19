@@ -44,25 +44,22 @@ app.layout = html.Div(children=[
     ], style={'columnCount': 2}),
 
     html.Div([
-            html.Div([
-                    html.H4('Origin - Count of Non-Compliant Events'),
-                    dcc.Graph(
-                        id='fig_origin_compliance',
-                        figure=fig_origin_compliance
-                    )
-                ]
-            ),
-            html.Div([
-                    html.H4('AS Path Compliance - Count of Non-Compliant Events'),
-                    dcc.Graph(
-                        id='fig_as_path_compliance',
-                        figure=fig_as_path_compliance
-                    )
-                ]
+        html.Div([
+            html.H4('Origin - Count of Non-Compliant Events'),
+            dcc.Graph(
+                id='fig_origin_compliance',
+                figure=fig_origin_compliance
             )
-        ], style={'columnCount': 2})
-    ]
-)
+        ]),
+        html.Div([
+            html.H4('AS Path Compliance - Count of Non-Compliant Events'),
+            dcc.Graph(
+                id='fig_as_path_compliance',
+                figure=fig_as_path_compliance
+            )
+        ])
+    ], style={'columnCount': 2})
+])
 
 if __name__ == '__main__':
     app.run_server(debug=True)

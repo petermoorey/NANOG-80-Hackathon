@@ -1,11 +1,12 @@
 import sys
 import yaml
 import re
-import time 
+import time
 
 from netaddr import IPNetwork, IPAddress
 from influxdb import InfluxDBClient
 from datetime import datetime
+
 
 class ComplianceParser(object):
     def __init__(self, policy: str):
@@ -21,14 +22,18 @@ class ComplianceParser(object):
             print("Malformed policy.")
             self.regions = []
             self.policies = []
-        
+
         try:
             with open('influx.yml', 'r') as db_context:
                 db_params = yaml.load(db_context, Loader=yaml.FullLoader)
-                self.db = InfluxDBClient(host='163.185.202.37', username='root', password='root', database='telegraf')
+                self.db = InfluxDBClient(
+                    host='influxdb',
+                    username='root',
+                    password='root',
+                    database='telegraf'
+                )
         except Exception as e:
             print(e)
-
 
     def is_in_policy(self, prefix: str) -> str:
         try:
@@ -36,20 +41,20 @@ class ComplianceParser(object):
 
             for prefix, policy in self.policies.items():
                 parent_network = IPNetwork(prefix)
-                
+
                 if policy['match'] == 'any':
                     if target_network in parent_network:
                         print(f"{target_network} in {parent_network}")
                         return str(parent_network)
                 elif policy['match'] == 'explicit':
-                        if target_network == parent_network:
-                            print(f"{target_network} is {parent_network}")
-                            return prefix
+                    if target_network == parent_network:
+                        print(f"{target_network} is {parent_network}")
+                        return prefix
                 else:
                     raise NotImplementedError
         except KeyError:
             print("Malformed Policy")
-            
+
         return None
 
     def evaluate(self) -> bool:
@@ -79,7 +84,7 @@ class ComplianceParser(object):
                                     else:
                                         compliance[f"{key}_compliance"] = 1
                                         print(f"prefix {prefix} attribute {key} is {result[attr]} which is non-compliant based on {value} from source {result['source']}")
-            
+
                 payload = [{
                     "measurement": "routingCompliance",
                     "tags": {

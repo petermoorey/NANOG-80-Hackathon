@@ -9,10 +9,11 @@ USER = 'cisco'
 PWD = 'cisco'
 PORT = 443
 
+
 def main(grpc_host):
-    
+
     hosts = []
-    
+
     with open("mdt_subscriptions.yml", "r") as f:
         mdt_sub = safe_load(f)
 
@@ -50,7 +51,8 @@ def main(grpc_host):
                 print(f"Added ({len(mdt_sub['subscriptions'])}) subscriptions")
 
         print(f"NETCONF session disconnected: {host}")
-    
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print(f"usage: python netconf_mdt_subscription.py <gRPC host ip address>")
