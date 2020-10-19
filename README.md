@@ -12,7 +12,7 @@ Our personal goals during the hackathon were to:
   * Incorrect provider policies
   * Route hijacking
 
-## Project Organization
+## Project organization
 
 To deliver the solution as a team, we broke the project into several discrete activities/components.  We used GitHub to track the work items and assign responsibilities:
 
@@ -49,13 +49,13 @@ Here's the team!
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-## Our Design principles
+## Our design principles
 
 - Keep it simple
 - Build the absolute minimum to end up with a working solution
 - Design as an extensible framework, with examples included
 
-## High-level Design
+## High-level design
 
 Before starting we sat down together and agreed how the solution should be build.
 
