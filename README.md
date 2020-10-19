@@ -65,8 +65,9 @@ Before starting we sat down together and agreed how the solution should be build
 
 Here are some examples of the policy rules we'd like to assess for a given prefix:
 
-- Validate origin ASN 
-- Identify BGP route hijacking 
+- Validate correct origin ASN 
+- Identify instances of BGP route hijacking
+- Verify correct provider route handling based on BGP community values
 
 ## Policy Definition
 
