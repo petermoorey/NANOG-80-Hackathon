@@ -1,14 +1,21 @@
-# NANOG 80 Hackathon
+# NANOG 80 Hackathon (Team Blue)
 
-Our idea for the NANOG 80 Hackathon (17-18th Oct 2020) is to create a system to evaluate BGP events based on a defined policy.
+Our idea for the NANOG 80 Hackathon (17-18th Oct 2020) is to create a system to evaluate BGP events based on a defined compliance policy.  We broke the project into several discrete activities/components:
+
+- Defining the desired BGP policies (Yordan)
+- Creating a structured document to describe the policy (Lawrence)
+- Designing and configuring a network to test the policy (Yordan)
+- Developing a solution to extract and store BGP events using network telemetry (Vladimir)
+- Developing a solution to assess the compliance of each BGP event, based on the policy (Lawrence)
+- Developing a solution to visualize BGP compliance (Pete)
+
+## Contributors ✨
+
+Here's the team!
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -26,33 +33,16 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-
-
-# Design principles
+# Our Design principles
 
 - Keep it simple
 - Build the absolute minimum to end up with a working solution
 - Design as an extensible framework, with examples included
 
 
-# Example Policy Compliance Object:
+# BGP Policies:
 
-```
-json_data = [
-    {
-        "measurement": "routingCompliance",
-        "tags": {
-            "prefix": "192.168.0.0/24",
-            "source": "10.200.49.8",
-            "as_path": ""
-        },
-        "time": datetime.now(),
-        "fields": {
-                "as_origin_compliance": 1,
-                "community_compliance": 0,
-                "weight_compliance": 0,
-                "med_compliance": 0,
-        }
-    }
-]
-```
+Here are some examples of the policy rules we'd like to assess for a given prefix:
+
+- Validate origin ASN 
+- Identify BGP route hijacking 
