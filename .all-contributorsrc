@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "TheBirdsNest",
+      "name": "Lawrence Bird",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/31070227?v=4",
+      "profile": "https://github.com/TheBirdsNest",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "NANOG-80-Hackathon",
+  "projectOwner": "petermoorey",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
