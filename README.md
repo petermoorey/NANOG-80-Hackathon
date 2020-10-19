@@ -25,7 +25,7 @@ To deliver the solution as a team, we broke the project into several discrete ac
 
 We were able to successfully create a working solution, and delivered a 15 minute presentation to the other NANOG Hackathon participants.  You can find a copy of the presentation [here](https://github.com/petermoorey/NANOG-80-Hackathon/blob/main/docs/NANOG%20Presentation.pdf).
 
-## Contributors ✨
+## Contributors
 
 Here's the team!
 
@@ -69,7 +69,7 @@ Here are some examples of the policy rules we'd like to assess for a given prefi
 - Identify instances of BGP route hijacking
 - Verify correct provider route handling based on BGP community values
 
-## Policy Definition
+## Policy definition
 
 We decided to use a YAML document to describe the desired policy:
 
