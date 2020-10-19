@@ -91,8 +91,6 @@ class ComplianceParser(object):
                 print("Comitting to DB")
                 print(payload)
                 self.db.write_points(payload)
-            else:
-                print(result)
 
 
 if __name__ == "__main__":
