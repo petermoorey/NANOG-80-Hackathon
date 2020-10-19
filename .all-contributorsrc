@@ -32,6 +32,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "petermoorey",
+      "name": "Peter Moorey",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10014623?v=4",
+      "profile": "https://www.linkedin.com/in/pmoorey",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
