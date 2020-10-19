@@ -10,7 +10,9 @@ Our idea for the NANOG 80 Hackathon (17-18th Oct 2020) is to create a system to 
   * Incorrect provider policies
   * Route hijacking
 
-To deliver the solution as a team, we broke the project into several discrete activities/components:
+## Project Organization
+
+To deliver the solution as a team, we broke the project into several discrete activities/components.  We used GitHub to track the work items and assign responsibilities:
 
 - Defining the desired BGP policies (Yordan)
 - Structured document to describe the policy (Yordan/Lawrence)
