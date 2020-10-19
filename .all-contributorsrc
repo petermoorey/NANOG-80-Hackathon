@@ -13,6 +13,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "yordangit12",
+      "name": "yordangit12",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/47042822?v=4",
+      "profile": "https://github.com/yordangit12",
+      "contributions": [
+        "infra",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
