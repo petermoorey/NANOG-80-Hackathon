@@ -1,6 +1,6 @@
 # NANOG 80 Hackathon
 
-Our idea for the NANOG 80 Hackathon (17-18th Oct 2020) is to create a system to evaluate BGP events based on a defined compliance policy.  Our personal goals were to:
+Our idea for the NANOG 80 Hackathon (17-18th Oct 2020) was to create a system for evaluate BGP events based on rules defined in a compliance policy.  Our personal goals during the hackathon were to:
 
 - Evaluate various technology stacks
 - Explore network telemetry capabilities
