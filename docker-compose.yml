@@ -30,6 +30,8 @@ services:
       - influxdb
     volumes:
       - ./visualization/chronograf:/var/lib/chronograf
+    environment:
+      - BOLT_PATH:/var/lib/chronograf
 
   # store policy compliance
   influxdb:

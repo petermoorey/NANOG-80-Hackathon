@@ -59,7 +59,6 @@ class ComplianceParser(object):
 
     def evaluate(self) -> bool:
         query = f'SELECT * FROM "{self.source}" WHERE time > now() - 15s'
-        print(query)
         results = self.db.query(query)
         for result in results.get_points(self.source):
             prefix_path = 'bgp_route_af/bgp_route_filter/bgp_route_entry/prefix'

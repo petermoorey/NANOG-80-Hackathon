@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -m
-CONFIG_TEMPLATE="/telegraf.template.conf"
+CONFIG_TEMPLATE="/app/telegraf.template.conf"
 CONFIG_FILE="/etc/telegraf/telegraf.conf"
 
 sed -e "s/\${HOST_NAME}/$HOST_NAME/" \
