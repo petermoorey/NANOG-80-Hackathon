@@ -1,6 +1,16 @@
-# NANOG 80 Hackathon (Team Blue)
+# NANOG 80 Hackathon
 
-Our idea for the NANOG 80 Hackathon (17-18th Oct 2020) is to create a system to evaluate BGP events based on a defined compliance policy.  We broke the project into several discrete activities/components:
+Our idea for the NANOG 80 Hackathon (17-18th Oct 2020) is to create a system to evaluate BGP events based on a defined compliance policy.  Our personal goals were to:
+
+- Evaluate various technology stacks
+- Explore network telemetry capabilities
+- Create a network to showcase routing scenarios
+- Provide real-time evaluation of BGP routes to detect:
+  * Poorly configured route-maps
+  * Incorrect provider policies
+  * Route hijacking
+
+To deliver the solution as a team, we broke the project into several discrete activities/components:
 
 - Defining the desired BGP policies (Yordan)
 - Structured document to describe the policy (Yordan/Lawrence)
@@ -8,6 +18,8 @@ Our idea for the NANOG 80 Hackathon (17-18th Oct 2020) is to create a system to 
 - Extract and store BGP events using network telemetry (Vladimir)
 - Assess the compliance of each BGP event (Lawrence)
 - Visualize BGP compliance (Pete)
+
+We were able to successfully create a working solution, and delivered a 15 minute presentation to the other NANOG Hackathon participants.  You can find a copy of the presentation [here](https://github.com/petermoorey/NANOG-80-Hackathon/blob/main/docs/NANOG%20Presentation.pdf).
 
 ## Contributors ✨
 
@@ -39,6 +51,11 @@ Here's the team!
 - Build the absolute minimum to end up with a working solution
 - Design as an extensible framework, with examples included
 
+## High-level Design
+
+Before starting we sat down together and agreed how the solution should be build.
+
+![High-level Design](https://github.com/petermoorey/NANOG-80-Hackathon/blob/main/docs/SystemDesign.drawio.svg)
 
 ## Defining the desired BGP policies
 
