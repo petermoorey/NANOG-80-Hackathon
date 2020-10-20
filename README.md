@@ -136,7 +136,7 @@ subscriptions:
 
 ## Assess the compliance of each BGP event
 
-Each BGP event in InfluxDB is assessed according to the desired policy, rules are evaluated top-down, like an ACL.  The compliance results are stored in a seperate table in InfluxDB for visualization.
+Each BGP event in InfluxDB is assessed according to the desired policy, rules are evaluated top-down, like an ACL.  The compliance results are stored in a separate table in InfluxDB for visualization.
 
 ```python
     def evaluate(self) -> bool:
