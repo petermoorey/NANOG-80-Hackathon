@@ -38,10 +38,10 @@ Here's the team!
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/TheBirdsNest"><img src="https://avatars3.githubusercontent.com/u/31070227?v=4" width="100px;" alt=""/><br /><sub><b>Lawrence Bird</b></sub></a><br /><a href="https://github.com/petermoorey/NANOG-80-Hackathon/commits?author=TheBirdsNest" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/yordangit12"><img src="https://avatars1.githubusercontent.com/u/47042822?v=4" width="100px;" alt=""/><br /><sub><b>yordangit12</b></sub></a><br /><a href="#infra-yordangit12" title="Infrastructure (Hosting, Build-Tools, etc)">💻</a></td>
-    <td align="center"><a href="https://github.com/VladimirGHC"><img src="https://avatars1.githubusercontent.com/u/72935381?v=4" width="100px;" alt=""/><br /><sub><b>Vladimir Yakovlev</b></sub></a><br /><a href="https://github.com/petermoorey/NANOG-80-Hackathon/commits?author=VladimirGHC" title="Code">💻</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/pmoorey"><img src="https://avatars3.githubusercontent.com/u/10014623?v=4" width="100px;" alt=""/><br /><sub><b>Peter Moorey</b></sub></a><br /><a href="https://github.com/petermoorey/NANOG-80-Hackathon/commits?author=petermoorey" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/TheBirdsNest"><img src="https://avatars3.githubusercontent.com/u/31070227?v=4" width="100px;" alt=""/><br /><sub><b>Lawrence Bird</b></sub></a><br /><a href="https://github.com/petermoorey/NANOG-80-Hackathon/commits?author=TheBirdsNest" title="Code"></a></td>
+    <td align="center"><a href="https://github.com/yordangit12"><img src="https://avatars1.githubusercontent.com/u/47042822?v=4" width="100px;" alt=""/><br /><sub><b>yordangit12</b></sub></a><br /><a href="#infra-yordangit12" title="Infrastructure (Hosting, Build-Tools, etc)"></a></td>
+    <td align="center"><a href="https://github.com/VladimirGHC"><img src="https://avatars1.githubusercontent.com/u/72935381?v=4" width="100px;" alt=""/><br /><sub><b>Vladimir Yakovlev</b></sub></a><br /><a href="https://github.com/petermoorey/NANOG-80-Hackathon/commits?author=VladimirGHC" title="Code"></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/pmoorey"><img src="https://avatars3.githubusercontent.com/u/10014623?v=4" width="100px;" alt=""/><br /><sub><b>Peter Moorey</b></sub></a><br /><a href="https://github.com/petermoorey/NANOG-80-Hackathon/commits?author=petermoorey" title="Code"></a></td>
   </tr>
 </table>
 
