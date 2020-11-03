@@ -11,6 +11,8 @@ Our personal goals during the hackathon were to:
   * Poorly configured route-maps
   * Incorrect provider policies
   * Route hijacking
+  
+*Update: Our project was selected as one of the three winning projects for NANOG 80!*
 
 ## Project organization
 
